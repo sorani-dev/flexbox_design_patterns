@@ -1,0 +1,114 @@
+.even-columns {
+	display: flex;
+	gap: 1em;
+}
+
+.even-columns > * {
+	flex-basis: 100%; /* force the columns to be the max with they can */
+}
+
+/* will be a x width item grid but children will go to the next line if not enough space and stack if width is not enough */
+.grid-ish {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+}
+
+.grid-ish > * {
+	flex: 1 1 10em; /* flex-grow flex-shrink flex-basis */
+}
+
+/* only works if lots of whitespace around */
+.content-sidebar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+}
+
+.content-sidebar > *:nth-child(1) {
+	flex:1 1 70%;
+	min-width: 25ch; /* 25 to 30 ch. Choose ch number based on your layout. If too much the current element will overflow the parent because the min-width overrides flex */
+}
+
+.content-sidebar > *:nth-child(2) {
+	flex:1 1 30%;
+	min-width: 15ch;
+}
+
+:root {
+	--ff-primary:  basic-sans, sans-serif;
+	--clr-primary:  #ee6352;
+	--clr-body:  #333;
+	--clr-bg:  #ddd;
+	--spacer:  1em;
+}
+
+*,
+*::before,
+*::after
+{
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+h3
+{
+	margin: 0;
+}
+
+
+
+.flow > * + * {
+	margin-top: var(--flow-space, var(--spacer));
+	margin-bottom: var(--flow-space, var(--spacer));
+}
+
+body {
+	font-family: var(--ff-primary);
+	background-color: var(--clr-bg);
+	color: var(--clr-body);
+	min-height: 100vh;
+	font-size: 1.125em;
+	line-height: 1.6;
+}
+
+a {
+	color: var(--clr-primary);
+}
+
+.content {
+	max-width: 70vw;
+	margin: 3rem auto;
+	padding: 2em;
+	box-shadow: 0 0 3em rgba(0, 0, 0, .3);
+	background: #fff;
+}
+
+
+.col {
+	border: 3px solid rgba(0, 0, 0, 0.2);
+	background: rgba(0, 0, 0, 0.1);
+	padding: 3em;
+}
+
+
+.title {
+	color: var(--clr-primary);
+	font-size: 1.8em;
+	font-weight: 900;
+	text-align: center;
+}
+
+.flow {
+/*	margin-top: 20em;
+	max-width:  75%;
+	margin: 2em auto;
+	padding: 3em;
+	background-color: #fff;
+	font-family: var(--ff-primary, sans-serif);
+	border:  1px solid var(#ddd);
+	border-radius: 10px;*/
+}
+
+
